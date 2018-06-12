@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Taylor0417" />
+
+
+
+<meta name="description" content="Ajax-note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax学习笔记">
+<meta property="og:url" content="taylor0417.github.io/Ajaxa-md.html">
+<meta property="og:site_name" content="开启转向灯的博客">
+<meta property="og:description" content="Ajax-note">
+<meta property="og:updated_time" content="2018-06-12T05:10:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax学习笔记">
+<meta name="twitter:description" content="Ajax-note">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="开启转向灯的博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Ajax学习笔记 | 开启转向灯的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Taylor0417</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Welcome to my Blog</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/taylor900417@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="/taylor0417" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GoodHexo/">GoodHexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客建站/">博客建站</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/taylor0417">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Taylor0417</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Taylor0417</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Welcome to my Blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/taylor900417@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/taylor0417" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Ajaxa-md" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/Ajaxa-md.html" class="article-date">
+      <time datetime="2018-06-12T05:10:42.000Z" itemprop="datePublished">2018-06-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ajax学习笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Note/">Note</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="AJAX介绍"><a href="#AJAX介绍" class="headerlink" title="AJAX介绍"></a>AJAX介绍</h2><ol>
+<li><p>浏览器发起请求的方式：</p>
+<ol>
+<li><p>地址栏输入地址然后回车。(get)</p>
+</li>
+<li><p>href，src，url属性(get)</p>
+</li>
+<li><p>表单中的action属性(get/post)</p>
+</li>
+<li><p>ajax也是新的一种发送请求的方式</p>
+</li>
+</ol>
+</li>
+<li><p>ajax的本质就是发送请求的一种新方式。</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ajax基本案例</span></div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//实例</span></div><div class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</div><div class="line">  <span class="comment">//打开链接</span></div><div class="line">  xhr.open(<span class="string">'get'</span>,<span class="string">'ajax.php'</span>);</div><div class="line">  <span class="comment">//发送</span></div><div class="line">  xhr.send();</div><div class="line">  <span class="comment">//处理相应结果</span></div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</div><div class="line">      <span class="built_in">console</span>.log(xhr.responseText);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><hr>
+<ul>
+<li><p>ajax通过浏览器的内建对象XMLHttpRequest</p>
+</li>
+<li><p>使用时需要先创建一个实例对象</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>该实例包含一些属性、方法和事件</p>
+<ol>
+<li><p>第一步打开链接，xhr.open(请求方式,地址);举例：xhr.open(‘get’,’example.php’);</p>
+</li>
+<li><p>第二部发送请求，xhr.send();</p>
+</li>
+<li><p>XMLHttpRequest可以处理来自服务端的响应结果，通常情况下，使用事件监听来处理——为xhr实例添加onreadystatechange监听</p>
+</li>
+<li><p>当readyState等于4时，证明已经接收到了服务端的回应</p>
+</li>
+<li><p>可以用responseText获得响应主体</p>
+</li>
+</ol>
+</li>
+<li><p>可以携带参数发送请求</p>
+<ul>
+<li><p>get： 将参数写在地址后面 以？分割。 ‘example.php?name=小明&amp;age=16’</p>
+</li>
+<li><p>post：参数写在请求体里。send(‘name=小明&amp;age=16’);注意：当请求主体不为空时，必须要设置请求头。举例：</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不用记，复制即可</span></div><div class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>XMLHttpRequest遵循HTTP协议</p>
+<ul>
+<li>setRequestHeader可以修改和自定义头信息</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//状态码</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.status);</div><div class="line"><span class="comment">//状态信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.statusText);</div><div class="line"><span class="comment">//所有响应头</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.getAllResponseHeaders());</div><div class="line"><span class="comment">//响应主体</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><hr>
+<p>XMLHttpRequest可以以异步的方式发起一个请求</p>
+<blockquote>
+<p>什么是异步？ 异步可以理解成是程序的一种执行方式，异步在javascript中非常常见</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基本的异步</span></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1'</span>)</div><div class="line">&#125;,<span class="number">3000</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>);</div><div class="line"></div><div class="line"><span class="comment">//输出结果为——2，1</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基本的同步</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ;i&lt;<span class="number">1000000000000</span>;i++)&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1'</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>);</div><div class="line"></div><div class="line"><span class="comment">//输出结果为—— 1*1000000000次， 2</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>总结：绝大多数的异步代码都是通过回调函数的形式呈现的</p>
+</blockquote>
+<h2 id="头信息Content-Type"><a href="#头信息Content-Type" class="headerlink" title="头信息Content-Type"></a>头信息Content-Type</h2><hr>
+<ol>
+<li><p>Content-Type可以设置再响应头中，其含义可以理解成服务端告诉浏览器应该如何对响应的内容（响应主体）进行解析。</p>
+<blockquote>
+<p>例如：响应的是HTML则头设成（Content-Type: text/html）;</p>
+</blockquote>
+</li>
+<li><p>Content-Type也可以设置在请求头中，其含义可以理解成客户端告诉服务器应该如何对请求的内容（请求主体）进行解析</p>
+<blockquote>
+<p>例如：name=小明&amp;age=16 则头设置 Content-Type: Application/x-www-urlencoded</p>
+</blockquote>
+</li>
+<li><p>application/x-www-urlencoded不是唯一的值，还可能是application/json</p>
+</li>
+</ol>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><hr>
+<p>JSON是一种带格式的字符串，官方解释是一种数据交换格式。</p>
+<h3 id="json在Javascript中的应用"><a href="#json在Javascript中的应用" class="headerlink" title="json在Javascript中的应用"></a>json在Javascript中的应用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将一个数组或者对象转换成json字符串</span></div><div class="line"><span class="keyword">var</span> user = &#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'小明'</span>,</div><div class="line">    <span class="attr">age</span>:<span class="number">16</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(user));<span class="comment">//&#123;"name":"小明","age":16&#125;</span></div><div class="line"></div><div class="line"><span class="comment">//将json转换成一个数组或对象</span></div><div class="line"><span class="keyword">var</span> json = <span class="string">'&#123;"name":"小明","age":16&#125;'</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(json));<span class="comment">//js对象&#123;name: "小明", age: 16&#125;</span></div><div class="line"></div><div class="line"><span class="comment">//如果json是[] 解析成数组</span></div><div class="line"><span class="comment">//如果json是&#123;&#125; 解析成对象</span></div></pre></td></tr></table></figure>
+<h3 id="jQuery中的ajax"><a href="#jQuery中的ajax" class="headerlink" title="jQuery中的ajax"></a>jQuery中的ajax</h3><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    <span class="attr">type</span>:<span class="string">'get'</span>,</div><div class="line">    <span class="attr">url</span>:<span class="string">'./example.php'</span>,</div><div class="line">    <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">abc</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'成功了'</span>);</div><div class="line">        <span class="built_in">console</span>.log(abc);</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><hr>
+<p>在使用浏览器发起请求时，为了保证数据的安全，浏览器对用户的请求做出了一些限制，这些限制在一定程度上可以保证数据安全。浏览器首先做出限制，然后才是服务器的限制</p>
+<h3 id="浏览器限制"><a href="#浏览器限制" class="headerlink" title="浏览器限制"></a>浏览器限制</h3><h4 id="浏览器会按着一定的原则进行限制，这个原则如下："><a href="#浏览器会按着一定的原则进行限制，这个原则如下：" class="headerlink" title="浏览器会按着一定的原则进行限制，这个原则如下："></a>浏览器会按着一定的原则进行限制，这个原则如下：</h4><ul>
+<li>如果域名不一样 会限制</li>
+<li>如果协议不一样 会限制</li>
+<li>如果端口不一样 会限制</li>
+<li>三者有一个不一样，浏览器就会做出限制</li>
+<li>为了突破浏览器的限制，需要一些列的技术手段</li>
+</ul>
+<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><ol>
+<li>jsonp 就是专门为了解决跨域数据访问的一种方案</li>
+<li>jsonp 其本质是利用src属性可以跨域的特性，并不是真正的XMLHttpRequest a. 通过src访问一个php文件 b. php文件返回javascript的一个函数调用，并传参</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/Ajaxa-md.html">Ajax学习笔记</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Taylor0417</a></p>
+        <p><span>发布时间:</span>2018-06-12, 13:10:42</p>
+        <p><span>最后更新:</span>2018-06-12, 13:10:42</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/Ajaxa-md.html" title="Ajax学习笔记">taylor0417.github.io/Ajaxa-md.html</a>
+            <span class="copy-path" data-clipboard-text="原文: taylor0417.github.io/Ajaxa-md.html　　作者: Taylor0417" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/http-md.html">
+                    http学习笔记
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX"><span class="toc-number">1.</span> <span class="toc-text">AJAX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX介绍"><span class="toc-number">1.1.</span> <span class="toc-text">AJAX介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XMLHttpRequest"><span class="toc-number">1.2.</span> <span class="toc-text">XMLHttpRequest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步"><span class="toc-number">1.3.</span> <span class="toc-text">异步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#头信息Content-Type"><span class="toc-number">1.4.</span> <span class="toc-text">头信息Content-Type</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">1.5.</span> <span class="toc-text">JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json在Javascript中的应用"><span class="toc-number">1.5.1.</span> <span class="toc-text">json在Javascript中的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery中的ajax"><span class="toc-number">1.5.2.</span> <span class="toc-text">jQuery中的ajax</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域"><span class="toc-number">1.6.</span> <span class="toc-text">跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器限制"><span class="toc-number">1.6.1.</span> <span class="toc-text">浏览器限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器会按着一定的原则进行限制，这个原则如下："><span class="toc-number">1.6.1.1.</span> <span class="toc-text">浏览器会按着一定的原则进行限制，这个原则如下：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsonp"><span class="toc-number">1.6.2.</span> <span class="toc-text">jsonp</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Ajax学习笔记　| 开启转向灯的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/http-md.html" title="下一篇: http学习笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Ajaxa-md.html">Ajax学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/http-md.html">http学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/vue-md.html">Vue学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/just-test.html">just-test</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world.html">Hexo，从此开始...</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 Taylor0417
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
