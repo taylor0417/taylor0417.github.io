@@ -176,7 +176,7 @@
                             
                                 <a class="fa Email" href="/taylor900417@gmail.com" title="Email"></a>
                             
-                                <a class="fa GitHub" href="/taylor0417" title="GitHub"></a>
+                                <a class="fa GitHub" href="https://github.com/taylor0417" title="GitHub"></a>
                             
                                 <a class="fa RSS" href="/atom.xml" title="RSS"></a>
                             
@@ -250,7 +250,7 @@
                             
                                 <a class="fa Email" target="_blank" href="/taylor900417@gmail.com" title="Email"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="/taylor0417" title="GitHub"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/taylor0417" title="GitHub"></a>
                             
                                 <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
@@ -269,6 +269,15 @@
       <time datetime="2018-06-12T05:10:42.000Z" itemprop="datePublished">2018-06-12</time>
 </a>
 
+ 
+    <a href="/Ajaxa-md.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="Ajaxa-md.html"></span>
+        
+    </a>
 
     </div>
   
@@ -337,6 +346,15 @@
       <time datetime="2018-06-12T04:22:10.000Z" itemprop="datePublished">2018-06-12</time>
 </a>
 
+ 
+    <a href="/http-md.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="http-md.html"></span>
+        
+    </a>
 
     </div>
   
@@ -405,6 +423,15 @@
       <time datetime="2018-06-12T04:02:40.000Z" itemprop="datePublished">2018-06-12</time>
 </a>
 
+ 
+    <a href="/vue-md.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="vue-md.html"></span>
+        
+    </a>
 
     </div>
   
@@ -473,6 +500,15 @@
       <time datetime="2018-06-12T03:05:54.000Z" itemprop="datePublished">2018-06-12</time>
 </a>
 
+ 
+    <a href="/just-test.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="just-test.html"></span>
+        
+    </a>
 
     </div>
   
@@ -533,6 +569,15 @@
       <time datetime="2017-09-05T07:15:40.000Z" itemprop="datePublished">2017-09-05</time>
 </a>
 
+ 
+    <a href="/hello-world.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="hello-world.html"></span>
+        
+    </a>
 
     </div>
   
@@ -649,6 +694,26 @@
         })
     </script>
 
+
+    
+
+    
+        <script id="dsq-count-scr" src="//null.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
 
