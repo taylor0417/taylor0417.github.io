@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="taylor0417.github.io/"/>
-  <updated>2017-10-26T07:15:40.000Z</updated>
+  <updated>2018-06-12T03:05:54.000Z</updated>
   <id>taylor0417.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>just-test</title>
+    <link href="taylor0417.github.io/just-test.html"/>
+    <id>taylor0417.github.io/just-test.html</id>
+    <published>2018-06-12T03:05:54.000Z</published>
+    <updated>2018-06-12T03:05:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>水水水水</p>]]></content>
+    
+    <summary type="html">
+    
+      描述摘要
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo，从此开始...</title>
